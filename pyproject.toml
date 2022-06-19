@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "htcondor-monitor"
+version = "0.1.0"
+description = ""
+authors = ["Nicholas Devenish <ndevenish@gmail.com>"]
+packages = [ { include = "exporter", from = "src" } ]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+prometheus-client = "^0.14.1"
+htcondor = "^9.9.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+htcondor_exporter = "exporter.CondorExporter:main"
